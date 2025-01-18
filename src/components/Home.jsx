@@ -14,6 +14,7 @@ const Home = () => {
    
   return (
     <div className=' relative flex flex-col gap-3 pb-3 items-center'>
+        
         <div className='flex w-full flex-row justify-between items-center lg:flex-col lg:justify-center'>
             <div className='  flex flex-row  justify-start items-center pl-4 lg:pl-0 lg:justify-center lg:flex-col gap-3 pt-3'>
                 
@@ -33,7 +34,7 @@ const Home = () => {
         
             <div className={`w-full flex flex-col items-center justify-center gap-y-4 transition-all duration-500 ease-in overflow-hidden lg:max-h-96
             ${toggle?"max-h-96":"max-h-0"}`}>
-                <div className='bg-black w-10/12 h-[1px] '></div>
+                <div className='bg-gradient-to-r from-transparent via-gray-500 to-transparent w-10/12 h-[1px] '></div>
 
                 <div className='w-full flex justify-center items-start pl-3 flex-col gap-y-4 md:grid md:grid-cols-2 md:pl-10 lg:flex lg:pl-4'>
                     <div className='flex justify-center items-center gap-6  text-sm md:text-lg md:w-full md:justify-start '>
@@ -69,12 +70,13 @@ const Home = () => {
                     </div>
                 </div>
                 
-                <div className='bg-black w-10/12 h-[1px] '></div>
+                <div className='bg-gradient-to-r from-transparent via-gray-500 to-transparent w-10/12 h-[1px] '></div>
 
                 <div className='flex gap-3 text-2xl'>
                     <p><FaGithub /></p>
                     <p><FaLinkedin /></p>
                 </div>
+                
 
                 
             </div>

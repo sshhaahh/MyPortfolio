@@ -4,9 +4,11 @@ import Navbar from './components/Navbar';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Resume from './pages/Resume';
+import data from './Data';
 
 const App = () => {
   const [page, setPage] = useState('about');
+  
 
   return (
     <div className='flex justify-center items-center h-screen bg-[#181C14] text-white'>
@@ -26,28 +28,28 @@ const App = () => {
           </div>
 
           
-          <div className='relative rounded-3xl w-full h-full md:text-lg'>
+          <div className='relative rounded-3xl w-full h-full md:text-lg overflow-hidden'>
             
             <div
               className={`absolute  top-0 left-0 w-full h-full transition-all duration-500 ease-in ${
                 page === 'about' ? 'opacity-100 visible' : 'opacity-0 invisible'
               }`}
             >
-              <div className='p-4 pb-12 lg:pb-4'>
+              <div className='p-4 pb-12 lg:pb-4 h-full overflow-auto'>
                 <h1 className='text-3xl font-semibold mb-2'>About Me</h1>
                 <div className="my-4 h-px bg-gradient-to-r from-transparent via-gray-500 to-transparent"></div>
-
-                <About />
+                
+                <About about={data.about} skills={data.skills} education={data.education}/>
               </div>
             </div>
 
             
             <div
               className={`absolute top-0 left-0 w-full h-full transition-all duration-500 ease-in ${
-                page === 'contact' ? 'opacity-100 visible' : 'opacity-0 invisible'
+                page === 'contact' ? 'opacity-100 visible' : 'opacity-0 invisible '
               }`}
             >
-              <div className='p-4 pb-12 lg:pb-4'>
+              <div className='p-4 pb-12 lg:pb-4 h-full overflow-auto'>
                 <h1 className='text-3xl font-semibold mb-2'>Contact</h1>
                 <div className="my-4 h-px bg-gradient-to-r from-transparent via-gray-500 to-transparent"></div>
                 <Contact />
@@ -57,10 +59,10 @@ const App = () => {
 
             <div
               className={`absolute top-0 left-0 w-full h-full transition-all duration-500 ease-in ${
-                page === 'resume' ? 'opacity-100 visible' : 'opacity-0 invisible'
+                page === 'resume' ? 'opacity-100 visible' : 'opacity-0 invisible '
               }`}
             >
-              <div className='p-4 pb-12 lg:pb-4'>
+              <div className='p-4 pb-12 lg:pb-4 h-full overflow-auto'>
                 <h1 className='text-3xl font-semibold mb-2'>Resume</h1>
                 <div className="my-4 h-px bg-gradient-to-r from-transparent via-gray-500 to-transparent"></div>
                 <Resume/>
