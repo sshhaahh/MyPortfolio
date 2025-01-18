@@ -24,7 +24,7 @@ const App = () => {
 
         <div className="relative flex-1 overflow-auto bg-[#3C3D37] thin-outline rounded-3xl" onClick={()=>setToggle(false)}>
           <div className='fixed bottom-[-10px]  lg:absolute lg:top-[-7px] right-0 z-50 flex justify-center lg:justify-end items-center w-full h-[4rem] rounded-3xl'>
-            <Navbar setPage={setPage} />
+            <Navbar setPage={setPage} page={page} />
           </div>
 
           
@@ -65,7 +65,7 @@ const App = () => {
               <div className='p-4 pb-12 lg:pb-4 h-full overflow-auto'>
                 <h1 className='text-3xl font-semibold mb-2'>Projects</h1>
                 <div className="my-4 h-px bg-gradient-to-r from-transparent via-gray-500 to-transparent"></div>
-                <Projects/>
+                <Projects projects={data.projects}/>
               </div>
 
 

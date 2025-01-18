@@ -11,7 +11,7 @@ const About = ({about,skills,education}) => {
       {/* skills */}
       <div className='flex flex-col gap-y-4 md:mb-12'>
         <div className='flex justify-start gap-x-3 md:gap-x-6 items-center'>
-          <span className='thin-outline p-2  md:p-3 md:text-2xl rounded-xl'><FaLaptopCode /></span>
+          <span className='thin-outline p-2  md:p-3 md:text-2xl rounded-xl text-[#FFD700]'><FaLaptopCode /></span>
           <h1 className='text-3xl font-semibold '>Education</h1>
         </div>        
         <div className='grid grid-cols-3 md:grid-cols-4   p-2 gap-y-5 lg:gap-y-10'>
@@ -31,7 +31,7 @@ const About = ({about,skills,education}) => {
 
       <div>
         <div className='flex justify-start gap-x-3 md:gap-x-6 items-center '>
-          <span className='thin-outline p-2  md:p-3 md:text-2xl rounded-xl'><SiBookstack /></span>
+          <span className='thin-outline p-2  md:p-3 md:text-2xl rounded-xl text-[#FFD700]'><SiBookstack /></span>
           <h1 className='text-3xl font-semibold '>Education</h1>
         </div>
 
@@ -43,8 +43,8 @@ const About = ({about,skills,education}) => {
               </div>
               <div className='my-4 text-sm md:text-md lg:text-lg'>
                 <p className='font-semibold'>{course.university_name}</p>
-                <p>{`${course.from} - ${course.to}`}</p>
-                <p >{course.course}</p>
+                <p className='opacity-60'>{`${course.from} - ${course.to}`}</p>
+                <p className='opacity-80'>{course.course}</p>
               </div>
             </div>
           ))

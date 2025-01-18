@@ -47,7 +47,7 @@ const Map = () => {
 
   
     const marker = L.marker([29.4774219, 77.6945950]).addTo(map);
-    marker.bindPopup('This is your location!').openPopup();
+    marker.bindPopup('My Location!').openPopup();
 
   
     return () => {
