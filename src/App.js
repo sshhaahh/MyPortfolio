@@ -3,12 +3,12 @@ import Home from './components/Home';
 import Navbar from './components/Navbar';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import Resume from './pages/Resume';
 import data from './Data';
+import Projects from './pages/Projects';
 
 const App = () => {
   const [page, setPage] = useState('about');
-  
+  const [toggle,setToggle]=useState(false);
 
   return (
     <div className='flex justify-center items-center h-screen bg-[#181C14] text-white'>
@@ -18,11 +18,11 @@ const App = () => {
           md:max-w-[58rem] md:w-[55rem]
           h-[98vh] lg:flex-row lg:max-w-[70rem] lg:w-[70rem] mx-auto gap-6">
         
-        <div className="overflow-auto rounded-3xl bg-[#3C3D37] lg:w-1/4">
-          <Home />
+        <div className="overflow-auto rounded-3xl bg-[#3C3D37] thin-outline lg:w-1/4">
+          <Home toggle={toggle} setToggle={setToggle} />
         </div>
 
-        <div className="relative flex-1 overflow-auto bg-[#3C3D37] rounded-3xl">
+        <div className="relative flex-1 overflow-auto bg-[#3C3D37] thin-outline rounded-3xl" onClick={()=>setToggle(false)}>
           <div className='fixed bottom-[-10px]  lg:absolute lg:top-[-7px] right-0 z-50 flex justify-center lg:justify-end items-center w-full h-[4rem] rounded-3xl'>
             <Navbar setPage={setPage} />
           </div>
@@ -59,13 +59,13 @@ const App = () => {
 
             <div
               className={`absolute top-0 left-0 w-full h-full transition-all duration-500 ease-in ${
-                page === 'resume' ? 'opacity-100 visible' : 'opacity-0 invisible '
+                page === 'projects' ? 'opacity-100 visible' : 'opacity-0 invisible '
               }`}
             >
               <div className='p-4 pb-12 lg:pb-4 h-full overflow-auto'>
-                <h1 className='text-3xl font-semibold mb-2'>Resume</h1>
+                <h1 className='text-3xl font-semibold mb-2'>Projects</h1>
                 <div className="my-4 h-px bg-gradient-to-r from-transparent via-gray-500 to-transparent"></div>
-                <Resume/>
+                <Projects/>
               </div>
 
 
