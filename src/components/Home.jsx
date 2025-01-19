@@ -9,7 +9,7 @@ import { FaLinkedin } from "react-icons/fa6";
 
 
 
-const Home = ({toggle,setToggle}) => {
+const Home = ({toggle,setToggle,profile}) => {
     
    
   return (
@@ -21,8 +21,8 @@ const Home = ({toggle,setToggle}) => {
                     <img className='h-20 sm:h-28 md:h-32  lg:h-40 lg:mt-3   w-auto thin-outline rounded-3xl' src='assets/pic.png' alt='not found'/>
                 
                 <div className='flex flex-col pl-3 gap-2 md:gap-6  lg:gap-3 lg:pl-0'>
-                    <h1 className='uppercase text-2xl md:text-3xl'>Shah Ameen</h1>
-                    <p className='thin-outline text-[#FFD700] flex justify-center items-center rounded-3xl py-1 text-sm lg:text-lg bg-gradient-to-r from-zinc-700 to-zinc-800'>Web Developer</p>
+                    <h1 className='uppercase text-2xl md:text-3xl font-serif'>{profile.name}</h1>
+                    <p className='thin-outline text-[#FFD700] flex justify-center items-center rounded-3xl py-1 text-sm lg:text-lg bg-gradient-to-r from-zinc-700 to-zinc-800'>{profile.sector}</p>
                 </div>
             </div>
             <div className='text-xl text-black py-1 md:text-4xl lg:hidden absolute top-0 right-0 rounded-tr-3xl rounded-bl-xl px-2 border md:px-6'>
@@ -41,7 +41,7 @@ const Home = ({toggle,setToggle}) => {
                         <p className='thin-outline rounded-lg p-2 md:p-3 text-[#FFD700]'><SiGmail /></p>
                         <div>
                             <p className='opacity-60'>EMAIL</p>
-                            <p className=''>amenfalak786@gmail.com</p>
+                            <p className=''>{profile.email}</p>
                         </div>
                     </div>
 
@@ -49,7 +49,7 @@ const Home = ({toggle,setToggle}) => {
                         <p className='thin-outline rounded-lg p-2 md:p-3 text-[#FFD700]'><MdPhoneIphone /></p>
                         <div>
                             <p className='opacity-60'>PHONE</p>
-                            <p className=''>7310671360</p>
+                            <p className=''>{profile.phone}</p>
                         </div>
                     </div>
 
@@ -57,7 +57,7 @@ const Home = ({toggle,setToggle}) => {
                         <p className='thin-outline rounded-lg p-2 md:p-3 text-[#FFD700]'><LiaBirthdayCakeSolid /></p>
                         <div>
                             <p className='opacity-60'>BIRTHDAY</p>
-                            <p className=''>06/02/2001</p>
+                            <p className=''>{profile.birthday}</p>
                         </div>
                     </div>
 
@@ -65,7 +65,7 @@ const Home = ({toggle,setToggle}) => {
                         <p className='thin-outline rounded-lg p-2 md:p-3 text-[#FFD700]'><FaLocationDot /></p>
                         <div>
                             <p className='opacity-60'>LOCATION</p>
-                            <p className=''>Laddhawala MZN</p>
+                            <p className=''>{profile.location}</p>
                         </div>
                     </div>
                 </div>

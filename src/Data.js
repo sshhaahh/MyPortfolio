@@ -1,4 +1,12 @@
 const data={
+    profile:{
+        name:"Shah Ameen",
+        sector:"Web Developer",
+        email:"ameenfalak786@gmail.com",
+        phone:"7310671360",
+        birthday:"06/02/2001",
+        location:"Muzaffarnagar"
+    },
     about:"A motivated and detail-oriented MCA graduate with strong knowledge of React, JavaScript, Java, and C++. Passionate about web development and problem-solving, with a focus on learning and implementing new technologies. As a fresher, I am eager to contribute to innovative projects while continuously enhancing my technical expertise.",
     skills:{
         

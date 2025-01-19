@@ -21,7 +21,7 @@ const App = () => {
           h-[98vh] lg:flex-row lg:max-w-[70rem] lg:w-[70rem] mx-auto gap-6">
         
         <div className="overflow-auto rounded-3xl bg-[#3C3D37] thin-outline lg:w-1/4">
-          <Home toggle={toggle} setToggle={setToggle} />
+          <Home toggle={toggle} setToggle={setToggle} profile={data.profile} />
         </div>
 
         <div className="relative flex-1 overflow-auto bg-[#3C3D37] thin-outline rounded-3xl" onClick={()=>setToggle(false)}>
