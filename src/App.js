@@ -5,6 +5,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import data from './Data';
 import Projects from './pages/Projects';
+// import Message from './pages/Message';
 
 const App = () => {
   const [page, setPage] = useState('about');
@@ -12,6 +13,7 @@ const App = () => {
 
   return (
     <div className='flex justify-center items-center h-screen bg-[#181C14] text-white'>
+      
       <div className="flex flex-col 
           max-w-[20rem] w-[20rem]
           sm:max-w-[40rem] sm:w-[28rem]
@@ -68,10 +70,9 @@ const App = () => {
                 <Projects projects={data.projects}/>
               </div>
 
-
-
             </div>
           </div>
+              {/* third components */}
         </div>
       </div>
     </div>

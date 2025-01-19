@@ -2,14 +2,47 @@ import React, { useState } from 'react'
 import Map from '../components/Map'
 import { FaWpforms } from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
+import axios from 'axios';
+import Loading from '../components/Loading';
+import { toast } from 'react-toastify';
 
 
 const Contact = () => {
   const [formData,setFormData]=useState({name:'',email:'',message:''});
+  const [loading,setLoading]=useState(false);
 
-  const submitHandler=(e)=>{
+  const submitHandler=async(e)=>{
     e.preventDefault();
-    console.log(formData);
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast.error('Please enter a valid email address.');
+      return;
+    }
+    setLoading(true);
+    try{
+      const response= await axios.post('http://localhost:3000/api/sendmessage',formData,{
+        headers:{
+          'Content-Type':'application/json'
+        },
+      });
+      if(response.data.success){
+        setFormData({name:"",email:"",message:""})
+        toast.success(response.data.message)
+      }
+      else{
+        if(!response.data.success){
+          toast.error(response.data.message)
+        }
+      }
+    }
+    catch(e){
+      console.log("message send ni hua")
+      console.log(e)
+    }finally{
+      setLoading(false);
+    }
+    
+
   }
 
     const handleChange=(e)=>{
@@ -62,8 +95,11 @@ const Contact = () => {
             name='message'
           />
 
-          <div>
-            <button type='submit' className='thin-outline px-3 py-2 md:px-5 md:py-3 rounded-2xl flex justify-center cursor-pointer bg-gradient-to-r from-zinc-700 to-zinc-800 hover:bg-gradient-to-l hover:scale-105 items-center gap-2'><span className='text-[#FFD700]'><IoIosSend /></span> Send Message</button>
+          <div className='h-14 '>
+            {loading?(<Loading/>):(
+              <button type='submit' className='thin-outline px-3 py-2 md:px-5 md:py-3 rounded-2xl flex justify-center cursor-pointer bg-gradient-to-r from-zinc-700 to-zinc-800 hover:bg-gradient-to-l hover:scale-105 items-center gap-2'><span className='text-[#FFD700]'><IoIosSend /></span> Send Message</button>
+            )}
+            
           </div>
         </form>
       </div>

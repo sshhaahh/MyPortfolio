@@ -6,7 +6,6 @@ import { LiaBirthdayCakeSolid } from "react-icons/lia";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
-import { Link } from 'react-router-dom';
 
 
 
@@ -23,7 +22,7 @@ const Home = ({toggle,setToggle}) => {
                 
                 <div className='flex flex-col pl-3 gap-2 md:gap-6  lg:gap-3 lg:pl-0'>
                     <h1 className='uppercase text-2xl md:text-3xl'>Shah Ameen</h1>
-                    <p className='thin-outline flex justify-center items-center rounded-3xl py-1 text-sm lg:text-lg bg-gradient-to-r from-zinc-700 to-zinc-800'>Web Developer</p>
+                    <p className='thin-outline text-[#FFD700] flex justify-center items-center rounded-3xl py-1 text-sm lg:text-lg bg-gradient-to-r from-zinc-700 to-zinc-800'>Web Developer</p>
                 </div>
             </div>
             <div className='text-xl text-black py-1 md:text-4xl lg:hidden absolute top-0 right-0 rounded-tr-3xl rounded-bl-xl px-2 border md:px-6'>
