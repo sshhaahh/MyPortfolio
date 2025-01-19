@@ -1,15 +1,18 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Map from '../components/Map'
 import { FaWpforms } from "react-icons/fa";
 import { IoIosSend } from "react-icons/io";
 import axios from 'axios';
 import Loading from '../components/Loading';
 import { toast } from 'react-toastify';
-
+import { FaMessage } from "react-icons/fa6";
+import { MdAccessTime } from "react-icons/md";
+import {format}  from 'date-fns';
 
 const Contact = () => {
   const [formData,setFormData]=useState({name:'',email:'',message:''});
   const [loading,setLoading]=useState(false);
+  const [messages,setMessages]=useState([]);
 
   const submitHandler=async(e)=>{
     e.preventDefault();
@@ -22,7 +25,7 @@ const Contact = () => {
     try{
       const response= await axios.post('http://localhost:3000/api/sendmessage',formData,{
         headers:{
-          'Content-Type':'application/json'
+          'Content-Type':'application/json' 
         },
       });
       if(response.data.success){
@@ -41,9 +44,29 @@ const Contact = () => {
     }finally{
       setLoading(false);
     }
-    
-
   }
+   
+  const messageHandler=async()=>{
+    try{
+      const response = await axios.get('http://localhost:3000/api/showmessages');
+      setMessages(response.data.data);
+      // console.log(messages)
+    }
+    catch(e){
+      console.log(e);
+    }
+  }
+    
+  useEffect(()=>{
+    messageHandler();
+  },[])
+
+
+  const dateHandler=(isoDate)=>{
+    const date =new Date(isoDate);
+    return format(date,'hh:mm a    dd/mm/yyyy')
+  }
+  
 
     const handleChange=(e)=>{
       const {name,value}=e.target;
@@ -103,6 +126,36 @@ const Contact = () => {
           </div>
         </form>
       </div>
+
+      <div className='md:w-[80%] flex flex-col gap-8 '>
+      
+        <div className='flex justify-start gap-x-3 md:gap-x-6 items-center '>
+          <span className='thin-outline p-2  md:p-3 md:text-2xl rounded-xl text-[#FFD700]'><FaMessage /></span>
+          <h1 className='text-3xl font-semibold '>Message</h1>
+        </div>
+
+        <div className='thin-outline rounded-2xl flex flex-col p-4 gap-3 justify-center items-center '>
+
+              {
+                messages.map((message,index)=>(
+                  
+                  <div key={index} className='thin-outline rounded-2xl p-3 w-full'>
+                    <div className='flex flex-row w-full justify-between '>
+                      <p className='text-2xl font-semibold opacity-85'>{message.name}</p>
+                      <p className='flex justify-center opacity-80 text-sm items-center gap-2 md:gap-3'><MdAccessTime /> {dateHandler(message.sendAt)}</p>
+                    </div>
+                      <p className='text-sm p-2  md:text-base'>{message.message}</p>
+                  </div>
+
+                ))
+              }
+   
+        </div>
+
+
+      </div>
+
+
     </div>
   )
 }
