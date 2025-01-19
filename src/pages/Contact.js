@@ -15,6 +15,9 @@ const Contact = () => {
   const [messages,setMessages]=useState([]);
   const [showMore,setShowMore]=useState(false);
   const [messageToShow,setMessageToShow]=useState([]);
+    
+
+
 
   const submitHandler=async(e)=>{
     e.preventDefault();
@@ -85,9 +88,9 @@ const Contact = () => {
     setShowMore(prevState => {
       const newState = !prevState;
       if (newState) {
-        setMessageToShow(messages); // Show all messages
+        setMessageToShow(messages); 
       } else {
-        setMessageToShow(messages.slice(0, 3)); // Show only first 3 messages
+        setMessageToShow(messages.slice(0, 3)); 
       }
       return newState;
     });
@@ -153,7 +156,7 @@ const Contact = () => {
 
         <div className='thin-outline rounded-2xl flex flex-col p-4 gap-3 justify-center items-center w-full '>
 
-              {
+              {messages.length===0?(<h1 className='text-2xl font-semibold'>There is no messages!</h1>):(
                 messageToShow.map((message,index)=>(
                   
                   <div key={index} className='thin-outline rounded-2xl p-3 w-full bg-[#555454]'>
@@ -164,14 +167,14 @@ const Contact = () => {
                       <p className='text-sm p-2  md:text-base'>{message.message}</p>
                   </div>
 
-                ))
+                )))
               }
 
-              <button onClick={showMoreHandler} className='thin-outline px-3 py-2 md:px-5 md:py-3 rounded-2xl flex justify-center cursor-pointer bg-gradient-to-r from-zinc-700 to-zinc-800 hover:bg-gradient-to-l hover:scale-105 items-center gap-2' >{showMore?"Hide More":"Show More"}</button>
-   
+              <button onClick={showMoreHandler} className={`thin-outline px-3 py-2 md:px-5 md:py-3 rounded-2xl flex justify-center cursor-pointer bg-gradient-to-r from-zinc-700 to-zinc-800 hover:bg-gradient-to-l hover:scale-105 items-center gap-2 ${messages.length===0?"invisible":"visible"}`} >{showMore?"Hide More":"Show More"}</button>
+      
         </div>
 
-
+            
       </div>
 
 
