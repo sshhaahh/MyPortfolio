@@ -71,7 +71,7 @@ const Home = ({toggle,setToggle,profile}) => {
                     </div>
                 </div>
                     <div className='flex justify-center items-center text-lg w-full '>
-                      <a href='https://drive.google.com/uc?export=download&id=1bXtDMEu8hAA5DvhKtg0D0JdTFo8_W3Hg'
+                      <a href='https://drive.google.com/uc?export=download&id=1bfgwrfjJXP4cAOvZz95KX_dXXN-KWSGr'
                         download="Shah Ameen CV"
                       >
                       <button  className='thin-outline px-3 py-1 md:px-5 text-[#FFD700] md:py-3 rounded-2xl flex justify-center cursor-pointer bg-gradient-to-r from-zinc-700 to-zinc-800 hover:bg-gradient-to-l hover:scale-105 items-center gap-2'><span className='text-[#FFD700]'><FaFileDownload /></span> Resume</button>
