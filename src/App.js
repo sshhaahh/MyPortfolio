@@ -20,11 +20,11 @@ const App = () => {
           md:max-w-[58rem] md:w-[55rem]
           h-[98vh] lg:flex-row lg:max-w-[70rem] lg:w-[70rem] mx-auto gap-6">
         
-        <div className="overflow-auto rounded-3xl bg-[#3C3D37] thin-outline lg:w-1/4">
+        <div className="overflow-auto rounded-3xl bg-[rgb(39,40,41)] lg:w-1/4">
           <Home toggle={toggle} setToggle={setToggle} profile={data.profile} />
         </div>
 
-        <div className="relative flex-1 overflow-auto bg-[#3C3D37] thin-outline rounded-3xl" onClick={()=>setToggle(false)}>
+        <div className="relative flex-1 overflow-auto  rounded-3xl" onClick={()=>setToggle(false)}>
           <div className='fixed bottom-[-10px]  lg:absolute lg:top-[-7px] right-0 z-50 flex justify-center lg:justify-end items-center w-full h-[4rem] rounded-3xl'>
             <Navbar setPage={setPage} page={page} />
           </div>

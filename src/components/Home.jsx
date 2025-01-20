@@ -6,6 +6,7 @@ import { LiaBirthdayCakeSolid } from "react-icons/lia";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
+import { FaFileDownload } from "react-icons/fa";
 
 
 
@@ -18,11 +19,11 @@ const Home = ({toggle,setToggle,profile}) => {
         <div className='flex w-full flex-row justify-between items-center lg:flex-col lg:justify-center'>
             <div className='  flex flex-row  justify-start items-center pl-4 lg:pl-0 lg:justify-center lg:flex-col gap-3 pt-3'>
                 
-                    <img className='h-20 sm:h-28 md:h-32  lg:h-40 lg:mt-3   w-auto thin-outline rounded-3xl' src='assets/pic.png' alt='not found'/>
+                    <img className='h-20 sm:h-28 md:h-32  lg:h-40 lg:mt-3   w-auto thin-outline rounded-3xl' src='assets/mypic.png' alt='not found'/>
                 
                 <div className='flex flex-col pl-3 gap-2 md:gap-6  lg:gap-3 lg:pl-0'>
                     <h1 className='uppercase text-2xl md:text-3xl font-serif'>{profile.name}</h1>
-                    <p className='thin-outline text-[#FFD700] flex justify-center items-center rounded-3xl py-1 text-sm lg:text-lg bg-gradient-to-r from-zinc-700 to-zinc-800'>{profile.sector}</p>
+                    <p className=' text-[#FFD700] flex justify-center items-center rounded-3xl py-1 text-sm lg:text-lg bg-zinc-700 '>{profile.sector}</p>
                 </div>
             </div>
             <div className='text-xl text-black py-1 md:text-4xl lg:hidden absolute top-0 right-0 rounded-tr-3xl rounded-bl-xl px-2 border md:px-6'>
@@ -69,6 +70,13 @@ const Home = ({toggle,setToggle,profile}) => {
                         </div>
                     </div>
                 </div>
+                    <div className='flex justify-center items-center text-lg w-full '>
+                      <a href='https://drive.google.com/uc?export=download&id=1bXtDMEu8hAA5DvhKtg0D0JdTFo8_W3Hg'
+                        download="Shah Ameen CV"
+                      >
+                      <button  className='thin-outline px-3 py-1 md:px-5 text-[#FFD700] md:py-3 rounded-2xl flex justify-center cursor-pointer bg-gradient-to-r from-zinc-700 to-zinc-800 hover:bg-gradient-to-l hover:scale-105 items-center gap-2'><span className='text-[#FFD700]'><FaFileDownload /></span> Resume</button>
+                      </a>
+                    </div>
                 
                 <div className='bg-gradient-to-r from-transparent via-gray-500 to-transparent w-10/12 h-[1px] '></div>
 

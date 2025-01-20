@@ -28,7 +28,7 @@ const Contact = () => {
     }
     setLoading(true);
     try{
-      const response= await axios.post('http://localhost:3000/api/sendmessage',formData,{
+      const response= await axios.post('https://myportfoliobackend-cajd.onrender.com/api/sendmessage',formData,{
         headers:{
           'Content-Type':'application/json' 
         },
@@ -54,10 +54,9 @@ const Contact = () => {
    
   const messageHandler=async()=>{
     try{
-      const response = await axios.get('http://localhost:3000/api/showmessages');
+      const response = await axios.get('https://myportfoliobackend-cajd.onrender.com/api/showmessages');
       setMessages(response.data.data);
       setMessageToShow(response.data.data.slice(0,3));
-      // console.log(messages)
     }
     catch(e){
       console.log(e);
@@ -151,7 +150,7 @@ const Contact = () => {
       
         <div className='flex justify-start gap-x-3 md:gap-x-6 items-center '>
           <span className='thin-outline p-2  md:p-3 md:text-2xl rounded-xl text-[#FFD700]'><FaMessage /></span>
-          <h1 className='text-3xl font-semibold '>Message</h1>
+          <h1 className='text-3xl font-semibold '>Your Messages</h1>
         </div>
 
         <div className='thin-outline rounded-2xl flex flex-col p-4 gap-3 justify-center items-center w-full '>
@@ -170,7 +169,7 @@ const Contact = () => {
                 )))
               }
 
-              <button onClick={showMoreHandler} className={`thin-outline px-3 py-2 md:px-5 md:py-3 rounded-2xl flex justify-center cursor-pointer bg-gradient-to-r from-zinc-700 to-zinc-800 hover:bg-gradient-to-l hover:scale-105 items-center gap-2 ${messages.length===0?"invisible":"visible"}`} >{showMore?"Hide More":"Show More"}</button>
+              <button onClick={showMoreHandler} className={`thin-outline px-3 py-2 md:px-5 md:py-3 rounded-2xl  justify-center cursor-pointer bg-gradient-to-r from-zinc-700 to-zinc-800 hover:bg-gradient-to-l hover:scale-105 items-center gap-2 ${(messages.length===0)?"invisible fixed":"visible flex"} ${messages.length < 4 ? "invisible fixed" : "visible flex"}`} >{showMore?"Hide More":"Show More"}</button>
       
         </div>
 
