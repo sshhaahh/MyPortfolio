@@ -146,7 +146,7 @@ const Contact = () => {
         </form>
       </div>
 
-      <div className='md:w-[100%] flex flex-col gap-8 '>
+      {/* <div className='md:w-[100%] flex flex-col gap-8 '>
       
         <div className='flex justify-start gap-x-3 md:gap-x-6 items-center '>
           <span className='thin-outline p-2  md:p-3 md:text-2xl rounded-xl text-[#FFD700]'><FaMessage /></span>
@@ -174,7 +174,7 @@ const Contact = () => {
         </div>
 
             
-      </div>
+      </div> */}
 
 
     </div>
