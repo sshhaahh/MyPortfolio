@@ -5,8 +5,8 @@ import { IoIosSend } from "react-icons/io";
 import axios from 'axios';
 import Loading from '../components/Loading';
 import { toast } from 'react-toastify';
-import { FaMessage } from "react-icons/fa6";
-import { MdAccessTime } from "react-icons/md";
+// import { FaMessage } from "react-icons/fa6";
+// import { MdAccessTime } from "react-icons/md";
 import {format}  from 'date-fns';
 
 const Contact = () => {
@@ -16,6 +16,7 @@ const Contact = () => {
   const [showMore,setShowMore]=useState(false);
   const [messageToShow,setMessageToShow]=useState([]);
     
+  console.log(showMore,messageToShow);
 
 
 
@@ -69,10 +70,10 @@ const Contact = () => {
   },[])
 
 
-  const dateHandler=(isoDate)=>{
-    const date =new Date(isoDate);
-    return format(date,'hh:mm a    dd/mm/yyyy')
-  }
+  // const dateHandler=(isoDate)=>{
+  //   const date =new Date(isoDate);
+  //   return format(date,'hh:mm a    dd/mm/yyyy')
+  // }
   
 
     const handleChange=(e)=>{
